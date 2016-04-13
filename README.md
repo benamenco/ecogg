@@ -1,4 +1,7 @@
-Ecology scripts by Giorgio Gonnella
+Microbial ecology scripts by Giorgio Gonnella
+
+This collection of scripts complements existing software,
+such as Qiime, Mothur or iNEXT.
 
 Usage:
 - add the lib directory to your RUBYLIB
