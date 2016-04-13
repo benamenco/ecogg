@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# from http://edwards.sdsu.edu/labsite/index.php/robert/381-perl-one-liner-to-extract-sequences-by-their-identifer-from-a-fasta-file
+
+# %-PURPOSE-%
+purpose="Extract sequences by ID from fas or qual file"
+
+if [ "$2" == "" ]; then
+  echo $purpose  > /dev/stderr
+  echo "Usage: $0 [-n] <IDS-file> <input-file>" > /dev/stderr
+  exit 1
+fi
+
+if [ "$1" == "-n" ]; then
+  perl -ne 'if(/^>(\S+)/){$c=!$i{$1}}$c?print:chomp;$i{$_}=1 if @ARGV' $2 $3
+else
+  perl -ne 'if(/^>(\S+)/){$c=$i{$1}}$c?print:chomp;$i{$_}=1 if @ARGV' $1 $2
+fi

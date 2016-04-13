@@ -1,0 +1,9 @@
+rm -f *.exclusive_Not-OpenOcean
+rm -f *.exclusive_Not-OpenOcean.cs
+rm -f *.exclusive_Not-OpenOcean.cs.td
+rm -f *.exclusive_OpenOcean
+rm -f *.exclusive_OpenOcean.cs
+rm -f *.exclusive_OpenOcean.cs.td
+rm -f *.shared
+rm -f *.shared.cs
+rm -f *.shared.cs.td
