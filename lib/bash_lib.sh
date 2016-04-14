@@ -46,9 +46,14 @@ function require_file { local file=$1
 }
 export -f require_file
 
-function require_var { local var=$1 var_value=$2
+function require_var { local var=$1 var_value=$2 to=$3
+  if [ "$to" == "" ]; then
+    msg="Set the variable $var to $to"
+  else
+    msg="Variable shall not be empty ($var)"
+  fi
   if [ "$var_value" == "" ]; then
-    die "variable shall not be empty ($var)"
+    die $msg
   else
     true
   fi
