@@ -12,6 +12,7 @@ switch :reverse_primer, :help => "RC the primer and report last coordinate"
 switch :exclude_primer, :help => ["Report first coordinate outside the primer",
                                   "i.e. first after the primer for F and",
                                   "first before the primer for R"]
+switch :mode, :help => "Only show most frequent coordinate (lowest if multiple)"
 verbose_switch
 optparse!
 
@@ -52,6 +53,18 @@ end
 if @verbose
   STDERR.print "\n"
 end
-counts.keys.sort.each do |pos|
-  puts [pos == undefpos ? "not_found" : pos, counts[pos]].join("\t")
+
+if @mode
+  counts[undefpos]=0
+  cmax = counts.max
+  counts.each_with_index do |c, pos|
+    if c == cmax
+      puts pos
+      exit 0
+    end
+  end
+else
+  counts.keys.sort.each do |pos|
+    puts [pos == undefpos ? "not_found" : pos, counts[pos]].join("\t")
+  end
 end
