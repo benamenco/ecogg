@@ -1,16 +1,16 @@
 #!/bin/bash
 
-require_var trimmomaticdir $trimmomaticdir "the path of Trimmomatic"
-require_var r1 $r1 "the forward readset (fq/gz), without .fq.gz"
-require_var r2 $r2 "the reverse readset (fq/gz), without .fq.gz"
-require_var outpfx $outpfx "the output path and filename prefix"
-require_var phiXindex $phiXindex \
-  "the bowtie2 index of the phiX genome (bowtie2-build <genome.fas> <index>)"
-require_var NCPU $NCPU "Number of threads to use"
-require_var mapping $mapping "Qiime mapping file"
+require_var trimmomaticdir "path of Trimmomatic"
+require_var r1 "forward readset (fq/gz), without .fq.gz"
+require_var r2 "reverse readset (fq/gz), without .fq.gz"
+require_var outpfx "output path and filename prefix"
+require_var phiXindex \
+  "bowtie2 index of the phiX genome (bowtie2-build <genome.fas> <index>)"
+require_var NCPU "number of threads to use"
+require_var mapping "Qiime mapping file"
 # sampleid and basecounter are different for each sample
-require_var sampleid $sampleid "SampleID for readset"
-require_var samplebasecounter $samplebasecounter "First seqnum for sample"
+require_var sampleid "SampleID for readset"
+require_var samplebasecounter "first seqnum for sample"
 
 require_file $trimmomaticdir/trimmomatic-0.33.jar
 require_file $trimmomaticdir/adapters/NexteraPE-PE.fa

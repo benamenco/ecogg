@@ -1,10 +1,10 @@
 #!/bin/bash
 
-require_var otutabpfx $otutabpfx "the input OTU table (wo .classic file sfx)"
-require_var n $n "the rescaling value (e.g. 10 million)"
-require_var NSLOTS $NSLOTS "the number of cluster slots to use"
-require_var mapping $mapping "the mapping file"
-require_var tree $tree "the phylogenetic tree file"
+require_var otutabpfx "input OTU table (wo .classic file sfx)"
+require_var n "rescaling value (e.g. 10 million)"
+require_var NSLOTS "number of cluster slots to use"
+require_var mapping "mapping file"
+require_var tree "phylogenetic tree file"
 
 require_program otutab_rescale.rb
 require_program otutab_classic_to_biom.sh

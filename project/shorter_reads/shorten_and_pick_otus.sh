@@ -1,9 +1,9 @@
 #!/bin/bash
 
-require_var silva $silva "Path to Silva database"
-require_var NSLOTS $NSLOTS "Number of cluster slots to use"
-require_var wholereads $wholereads "the input readset (whole reads)"
-require_var remap $remap "the map of readsets to vents or openocean"
+require_var silva "path to Silva database"
+require_var NSLOTS "number of cluster slots to use"
+require_var wholereads "input readset (whole reads)"
+require_var remap "map of readsets to vents or openocean"
 require_program fas_proportionally_shorten.rb
 
 for factor in 0.125 0.250 0.375 0.500 0.625 0.750 0.875; do

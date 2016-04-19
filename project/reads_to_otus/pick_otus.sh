@@ -1,10 +1,9 @@
 #!/bin/bash
 
-require_var allsamplesfna $allsamplesfna \
-  "Concatenated preprocessing.sh output files"
-require_var outdir $outdir "Output directory"
-require_var silva $silva "Path to Silva database"
-require_var NSLOTS $NSLOTS "Number of cluster slots to use"
+require_var allsamplesfna "concatenated preprocessing.sh output files"
+require_var outdir "output directory"
+require_var silva "path to the Silva database"
+require_var NSLOTS "number of cluster slots to use"
 
 require_program pick_open_reference_otus.py
 require_program filter_otus_from_otu_table.py

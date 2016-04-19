@@ -46,18 +46,20 @@ function require_file { local file=$1
 }
 export -f require_file
 
-function require_var { local var=$1 var_value=$2 to=$3
-  if [ "$to" == "" ]; then
-    msg="Set the variable $var to $to"
+function require_var { local var=$1 to=$2
+  if [ "$to" != "" ]; then
+    msg="Set the variable $var to the $to"
   else
     msg="Variable shall not be empty ($var)"
   fi
+  var_value=$(eval echo \$$var)
   if [ "$var_value" == "" ]; then
-    die $msg
+    die "$msg"
   else
     true
   fi
 }
+export -f require_var
 
 function check_n_args { local expargs=$1 nargs=$2
   if [ $nargs -ne $expargs ]; then

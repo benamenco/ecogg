@@ -2,7 +2,7 @@
 
 require_file V3V4.fas
 require_file V6.fas
-require_variable $silvatax
+require_var silvatax "Silva taxonomy file"
 require_program fas_shorten_proportionally.rb
 
 function assign_and_compare { local pfx=$1

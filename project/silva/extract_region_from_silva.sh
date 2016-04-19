@@ -1,10 +1,10 @@
 #!/bin/bash
-require_var fprimer $fprimer "F primer (or |-separated list)"
-require_var rprimer $rprimer "R primer (or |-separated list)"
-require_var silvaaln $silvaaln "Silva alignment file"
-require_var silvatax $silvatax "Silva taxonomy file"
-require_var minlen $minlen "Minimum length to keep"
-require_var maxlen $minlen "Maximum length to keep"
+require_var fprimer  "F primer (or |-separated list)"
+require_var rprimer  "R primer (or |-separated list)"
+require_var silvaaln "Silva alignment file"
+require_var silvatax "Silva taxonomy file"
+require_var minlen   "minimum length to keep"
+require_var maxlen   "maximum length to keep"
 require_file $silva
 require_program fas_extract_range.rb
 require_program fas_ungap.rb
